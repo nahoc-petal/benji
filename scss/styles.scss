@@ -16,6 +16,10 @@ $primary: $yellow;
 .banner-centre-formation {
   background-color: #eff4fa;
   border-radius: 12px;
+  .title {
+    max-width: 1000px;
+    margin: auto;
+  }
 }
 
 .banner-employeur {
@@ -29,6 +33,10 @@ $primary: $yellow;
   url('../images/bg.jpg');
   background-size: cover;
   background-position: center;
+  .title {
+    max-width: 1000px;
+    margin: auto;
+  }
 }
 
 .banner-header {
@@ -41,6 +49,10 @@ $primary: $yellow;
   url('../images/bg.jpg');
   background-size: cover;
   background-position: center;
+  .title {
+    max-width: 1000px;
+    margin: auto;
+  }
 }
 
 .second-menu {
