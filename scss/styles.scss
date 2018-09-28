@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$yellow: #fbd837;
+$accent: #1170b6;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $yellow;
+
+@import "bulma/bulma.sass";
+
+.banner-centre-formation {
+  background-color: #eff4fa;
+  border-radius: 12px;
+}
+
+.banner-employeur {
+
+}
+
+.banner-header {
+  position: relative;
+  background: 
+  /* top, transparent red, faked with gradient */ 
+  linear-gradient(
+    rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)
+  ),
+  /* bottom, image */
+  url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.second-menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1rem;
+  .navbar-end {
+    align-items: center;
+  }
+  .button {
+    margin-left: 3rem;
+  }
+  .navbar-item {
+    margin-left: 1rem;
+  }
+}
+
+.button.is-primary {
+  color: #363636!important;
+}
+
+.has-text-accent {
+  color: $accent;
+}
