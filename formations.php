@@ -1,4 +1,4 @@
-<?php /* Template Name: Homepage */ ?>
+<?php /* Template Name: Formations   */ ?>
 
 <?php get_header(); ?>
 
@@ -50,7 +50,7 @@
   ?>
 
   
-  <section class="banner-header hero is-large has-text-centered">
+  <section class="banner-header-formations hero is-medium has-text-centered" style="background: linear-gradient(rgba(1, 16, 43, 0.75), rgba(255, 255, 255, 0)),url(<?php echo get_the_post_thumbnail_url(); ?>">
     <nav class="navbar second-menu is-transparent">
       <div class="container">
         <div class="navbar-brand">
@@ -80,98 +80,105 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title is-uppercase has-text-weight-bold has-text-white">
-          <?php echo get_field("titre"); ?>
+          <?php echo get_the_title(); ?>
         </h1>
-        <h2 class="subtitle is-uppercase has-text-weight-bold has-text-white">
-          <?php echo get_field("sous-titre"); ?>
-        </h2>
-        <a class="button is-white is-uppercase has-text-accent has-text-weight-bold is-rounded" href="#">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Découvrir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
+      </div>
+    </div>
+  </section>
+
+  <?php
+
+$menu_name2 = 'programmes_menu';
+if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name2 ] ) ) {
+    $menu = wp_get_nav_menu_object( $locations[ $menu_name2 ] );
+  
+    $menu_items = wp_get_nav_menu_items($menu->term_id);
+    $menu_list2 = '';
+    $count = 0;
+    $submenu = false;$cpi=get_the_id();
+    foreach( $menu_items as $current ) {
+        if($cpi == $current->object_id ){if ( !$current->menu_item_parent ) {$cpi=$current->ID;}else{$cpi=$current->menu_item_parent;}$cai=$current->ID;break;}
+    }
+    foreach( $menu_items as $menu_item ) {
+        $link = $menu_item->url;
+        $title = $menu_item->title;
+        $menu_item->ID==$cai ? $ac2=' current_menu' : $ac2='';
+        if ( !$menu_item->menu_item_parent ) {
+            $parent_id = $menu_item->ID;$parent_id==$cpi ? $ac=' current_item' : $ac='';
+            if(!empty($menu_items[$count + 1]) && $menu_items[ $count + 1 ]->menu_item_parent == $parent_id ){//Checking has child
+                $menu_list2 .= '<div><h2 class="subtitle is-uppercase has-text-weight-bold"><small>'.$title.'</small></h2>';
+            }else{
+                $menu_list2 .= '<div><a href="'.$link.'" class="is-uppercase has-text-weight-bold"><small>'.$title.'</small></a>';
+            }
+        }
+        if ( $parent_id == $menu_item->menu_item_parent ) {
+            if ( !$submenu ) {
+                $submenu = true;
+                $menu_list2 .= '<div class="">';
+            }
+            $menu_list2 .= '';
+            $menu_list2 .= '<a href="'.$link.'" class="sidebar-item">'.$title.'</a>' ."\n";
+            $menu_list2 .= '' ."\n";
+            if(empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu){
+                $menu_list2 .= '</div>';
+                $submenu = false;
+            }
+        }
+        if (empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id ) { 
+            $menu_list2 .= '</div><br/>';      
+            $submenu = false;
+        }
+        $count++;
+    }
+}
+?>
+  <section class="section">
+    <div class="container">
+      
+      <div class="columns">
+        <div class="column is-one-third">
+          <h2 class="title is-uppercase has-text-accent">Programmes</h2>
+          <?php echo $menu_list2; ?>
+        </div>
+        <div class="column content">
+          <?php echo the_content(); ?>
+        </div>
       </div>
     </div>
   </section>
   <section class="section">
     <div class="container">
-      <div class="columns is-variable is-8">
-        <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_1"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
-          <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_1"); ?></h3>
-          <p><?php echo get_field("description_colonne_1"); ?></p>
-          <br />
-          <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="icon has-text-white">
-              <i class="fas fa-arrow-right"></i>
-            </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </a>
-        </div>
-        <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_2"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
-          <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_2"); ?></h3>
-          <p><?php echo get_field("description_colonne_2"); ?></p>
-          <br />
-          <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="icon has-text-white">
-              <i class="fas fa-arrow-right"></i>
-            </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </a>
-        </div>
-        <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_3"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
-          <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_3"); ?></h3>
-          <p><?php echo get_field("description_colonne_3"); ?></p>
-          <br />
-          <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="icon has-text-white">
-              <i class="fas fa-arrow-right"></i>
-            </span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <section class="banner-centre-formation hero is-medium has-text-centered">
+      <section class="banner-social-links hero is-medium has-text-centered">
         <div class="hero-body">
           <div class="container">
             <h2 class="title is-uppercase">
-              <?php echo get_field("titre_banner_centre_formation"); ?>
+             Partagez !
             </h2>
-            <h2 class="subtitle">
-              <?php echo get_field("sous-titre_banner_centre_formation"); ?>
-            </h2>
-            <a class="button is-uppercase has-text-weight-bold is-link is-outlined is-rounded" href="#">
-              &nbsp;&nbsp;&nbsp;En savoir plus&nbsp;&nbsp;&nbsp;
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <section class="banner-employeur hero is-medium has-text-centered">
-        <div class="hero-body">
-          <div class="container">
-            <h2 class="title is-uppercase has-text-white">
-              <?php echo get_field("titre_banner_employeur"); ?>
-            </h2>
-            <h2 class="subtitle has-text-white">
-              <?php echo get_field("sous-titre_banner_employeur"); ?>
-            </h2>
-            <a class="button is-primary is-uppercase has-text-weight-bold is-rounded" href="#">
-              &nbsp;&nbsp;&nbsp;Découvrez notre CFPMR-EMPLOI&nbsp;&nbsp;&nbsp;
-            </a>
+            <p>Le centre de formation professionnelle Marie-Rollet est toute une communauté.<br/>Aidez-nous à l'agrandir.
+            </p>
+            <a target="_blank" class="button is-link is-medium is-outlined is-rounded" href="#">
+            <span class="icon has-text-accent">
+              <i class="fab fa-lg fa-youtube"></i>
+            </span>
+          </a>
+          &nbsp;
+          <a target="_blank" class="button is-link is-medium is-outlined is-rounded" href="#">
+            <span class="icon has-text-accent">
+              <i class="fab fa-lg fa-twitter"></i>
+            </span>
+          </a>
+          &nbsp;
+          <a target="_blank" class="button is-link is-medium is-outlined is-rounded" href="#">
+            <span class="icon has-text-accent">
+              <i class="fab fa-lg fa-facebook-f"></i>
+            </span>
+          </a>
+          &nbsp;
+          <a target="_blank" class="button is-link is-medium is-outlined is-rounded" href="#">
+            <span class="icon has-text-accent">
+              <i class="fab fa-lg fa-instagram"></i>
+            </span>
+          </a>
           </div>
         </div>
       </section>

@@ -13,6 +13,7 @@ $primary: $yellow;
 
 @import "bulma/bulma.sass";
 
+.banner-social-links,
 .banner-centre-formation {
   background-color: #eff4fa;
   border-radius: 12px;
@@ -20,6 +21,20 @@ $primary: $yellow;
     max-width: 1000px;
     margin: auto;
   }
+}
+
+.sidebar-item {
+  background-color: #eff4fa;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  color: #363636;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 4px;
+  border-radius: 3px;
 }
 
 .banner-employeur {
@@ -39,6 +54,7 @@ $primary: $yellow;
   }
 }
 
+.banner-header-formations,
 .banner-header {
   position: relative;
   background: 
@@ -53,6 +69,10 @@ $primary: $yellow;
     max-width: 1000px;
     margin: auto;
   }
+}
+
+.banner-header-formations {
+  background-position: top center;
 }
 
 .second-menu {
@@ -77,4 +97,10 @@ $primary: $yellow;
 
 .has-text-accent {
   color: $accent!important;
+}
+
+.is-sticky {
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start;
 }

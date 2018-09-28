@@ -70,7 +70,7 @@
 	// enable navigation menu
 	if(function_exists('add_theme_support')){
 		add_theme_support('menus');
-		register_nav_menus(array('main_menu' =>'Main Navigation Menu', 'top_menu' => 'Top Navigation Menu'));
+		register_nav_menus(array('main_menu' => 'Main Navigation Menu', 'top_menu' => 'Top Navigation Menu', 'programmes_menu' => 'Programmes Menu'));
 	}
 	
 	// add filter to hook when user press "insert into post" to include the attachment id

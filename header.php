@@ -85,7 +85,8 @@ src="https://www.facebook.com/tr?id=305309189923953&ev=PageView&noscript=1"
 			$thumbnail = wp_get_attachment_image_src( $thumbnail_id , '150x150' );
 			echo '<link rel="image_src" href="' . $thumbnail[0] . '" />';		
 		}
-	}
+  }
+
 	?>	
 </head>
 <body <?php echo body_class(); ?>>

@@ -6342,9 +6342,27 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
+.banner-social-links,
 .banner-centre-formation {
   background-color: #eff4fa;
   border-radius: 12px; }
+  .banner-social-links .title,
+  .banner-centre-formation .title {
+    max-width: 1000px;
+    margin: auto; }
+
+.sidebar-item {
+  background-color: #eff4fa;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+  color: #363636;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 4px;
+  border-radius: 3px; }
 
 .banner-employeur {
   border-radius: 12px;
@@ -6352,12 +6370,23 @@ label.panel-block {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
   background-size: cover;
   background-position: center; }
+  .banner-employeur .title {
+    max-width: 1000px;
+    margin: auto; }
 
+.banner-header-formations,
 .banner-header {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
   background-size: cover;
   background-position: center; }
+  .banner-header-formations .title,
+  .banner-header .title {
+    max-width: 1000px;
+    margin: auto; }
+
+.banner-header-formations {
+  background-position: top center; }
 
 .second-menu {
   position: absolute;
@@ -6376,3 +6405,8 @@ label.panel-block {
 
 .has-text-accent {
   color: #1170b6 !important; }
+
+.is-sticky {
+  position: sticky;
+  top: 1rem;
+  align-self: flex-start; }
