@@ -19,18 +19,25 @@ $primary: $yellow;
 }
 
 .banner-employeur {
-
+  border-radius: 12px;
+  position: relative;
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)
+  ),
+  url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .banner-header {
   position: relative;
   background: 
-  /* top, transparent red, faked with gradient */ 
   linear-gradient(
     rgba(0, 0, 0, 0.45), 
     rgba(0, 0, 0, 0.45)
   ),
-  /* bottom, image */
   url('../images/bg.jpg');
   background-size: cover;
   background-position: center;
@@ -53,9 +60,9 @@ $primary: $yellow;
 }
 
 .button.is-primary {
-  color: #363636!important;
+  color: #363636;
 }
 
 .has-text-accent {
-  color: $accent;
+  color: $accent!important;
 }

@@ -6346,6 +6346,13 @@ label.panel-block {
   background-color: #eff4fa;
   border-radius: 12px; }
 
+.banner-employeur {
+  border-radius: 12px;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
+  background-size: cover;
+  background-position: center; }
+
 .banner-header {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
@@ -6365,7 +6372,7 @@ label.panel-block {
     margin-left: 1rem; }
 
 .button.is-primary {
-  color: #363636 !important; }
+  color: #363636; }
 
 .has-text-accent {
-  color: #1170b6; }
+  color: #1170b6 !important; }
