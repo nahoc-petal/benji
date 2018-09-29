@@ -90,7 +90,7 @@ src="https://www.facebook.com/tr?id=305309189923953&ev=PageView&noscript=1"
 	?>	
 </head>
 <body <?php echo body_class(); ?>>
-  <nav class="navbar is-transparent">
+  <nav class="navbar is-transparent montserrat has-text-weight-bold">
     <div class="container">
       <div class="navbar-brand">
         <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -103,16 +103,16 @@ src="https://www.facebook.com/tr?id=305309189923953&ev=PageView&noscript=1"
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item is-uppercase" href="https://bulma.io/">
-            Soins visuels
+            <small>Soins visuels</small>
           </a>
           <a class="navbar-item is-uppercase" href="https://bulma.io/">
-            Produits
+          <small>Produits</small>
           </a>
           <a class="navbar-item is-uppercase" href="https://bulma.io/">
-            Blogue
+          <small>Blogue</small>
           </a>
           <a class="navbar-item is-uppercase" href="https://bulma.io/">
-            Contact
+          <small>Contact</small>
           </a>
         </div>
 

@@ -51,7 +51,7 @@
 
   
   <section class="banner-header hero is-large has-text-centered">
-    <nav class="navbar second-menu is-transparent">
+    <nav class="navbar montserrat second-menu is-transparent">
       <div class="container">
         <div class="navbar-brand">
           <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -63,6 +63,7 @@
 
         <div id="navbarExampleTransparentExample" class="navbar-menu">
           <div class="navbar-start">
+          <div class="logo"></div>
           </div>
 
           <div class="navbar-end">
@@ -77,15 +78,15 @@
         </div>
       </div>
     </nav>
-    <div class="hero-body">
+    <div class="hero-body main-hero">
       <div class="container">
-        <h1 class="title is-uppercase has-text-weight-bold has-text-white">
+        <h1 class="title is-uppercase has-text-weight-bold has-text-white proxima">
           <?php echo get_field("titre"); ?>
         </h1>
-        <h2 class="subtitle is-uppercase has-text-weight-bold has-text-white">
+        <h2 class="subtitle is-uppercase has-text-weight-bold has-text-white montserrat">
           <?php echo get_field("sous-titre"); ?>
         </h2>
-        <a class="button is-white is-uppercase has-text-accent has-text-weight-bold is-rounded" href="#">
+        <a class="montserrat button is-white is-uppercase has-text-accent has-text-weight-bold is-rounded" href="#">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Découvrir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </a>
       </div>
@@ -95,11 +96,11 @@
     <div class="container">
       <div class="columns is-variable is-8">
         <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_1"); ?></h2>
+          <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_1"); ?></h2>
           <img src="images/rendez_vous.jpg"   />
           <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_1"); ?></h3>
-          <p><?php echo get_field("description_colonne_1"); ?></p>
+          <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_1"); ?></h3>
+          <p class="source-sans-pro"><?php echo get_field("description_colonne_1"); ?></p>
           <br />
           <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="icon has-text-white">
@@ -109,11 +110,11 @@
           </a>
         </div>
         <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_2"); ?></h2>
+          <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_2"); ?></h2>
           <img src="images/rendez_vous.jpg"   />
           <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_2"); ?></h3>
-          <p><?php echo get_field("description_colonne_2"); ?></p>
+          <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_2"); ?></h3>
+          <p class="source-sans-pro"><?php echo get_field("description_colonne_2"); ?></p>
           <br />
           <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="icon has-text-white">
@@ -123,11 +124,11 @@
           </a>
         </div>
         <div class="column is-one-third">
-          <h2 class="has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_3"); ?></h2>
+          <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_3"); ?></h2>
           <img src="images/rendez_vous.jpg"   />
           <br /> <br />
-          <h3 class="subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_3"); ?></h3>
-          <p><?php echo get_field("description_colonne_3"); ?></p>
+          <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_3"); ?></h3>
+          <p class="source-sans-pro"><?php echo get_field("description_colonne_3"); ?></p>
           <br />
           <a href="#" class="button is-primary"> &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="icon has-text-white">
@@ -144,13 +145,15 @@
       <section class="banner-centre-formation hero is-medium has-text-centered">
         <div class="hero-body">
           <div class="container">
-            <h2 class="title is-uppercase">
+            <h2 class="montserrat title is-uppercase">
               <?php echo get_field("titre_banner_centre_formation"); ?>
             </h2>
-            <h2 class="subtitle">
+            <br/>
+            <h2 class="source-sans-pro subtitle">
               <?php echo get_field("sous-titre_banner_centre_formation"); ?>
             </h2>
-            <a class="button is-uppercase has-text-weight-bold is-link is-outlined is-rounded" href="#">
+            <br/>
+            <a class="montserrat button is-uppercase has-text-weight-bold is-link is-outlined is-rounded" href="#">
               &nbsp;&nbsp;&nbsp;En savoir plus&nbsp;&nbsp;&nbsp;
             </a>
           </div>
@@ -163,13 +166,15 @@
       <section class="banner-employeur hero is-medium has-text-centered">
         <div class="hero-body">
           <div class="container">
-            <h2 class="title is-uppercase has-text-white">
+            <h2 class="montserrat title is-uppercase has-text-white">
               <?php echo get_field("titre_banner_employeur"); ?>
             </h2>
-            <h2 class="subtitle has-text-white">
+            <br/>
+            <h2 class="source-sans-pro subtitle has-text-white">
               <?php echo get_field("sous-titre_banner_employeur"); ?>
             </h2>
-            <a class="button is-primary is-uppercase has-text-weight-bold is-rounded" href="#">
+            <br/>
+            <a class="montserrat button is-primary is-uppercase has-text-weight-bold is-rounded" href="#">
               &nbsp;&nbsp;&nbsp;Découvrez notre CFPMR-EMPLOI&nbsp;&nbsp;&nbsp;
             </a>
           </div>

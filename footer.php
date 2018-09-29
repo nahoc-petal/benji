@@ -1,7 +1,10 @@
 <footer class="footer">
   <div class="container">
     <div class="columns">
-      <div class="column is-6">images</div>
+      <div class="column is-6" style="display: flex; flex-direction: row;">
+        <div class="commission-scolaire"></div>
+        <div class="logo-color"></div>
+      </div>
       <div class="column is-2">
         <small class="has-text-weight-bold">Centre de formation professionnelle Marie-Rollet</small>
         <br />

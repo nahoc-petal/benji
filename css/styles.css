@@ -1,5 +1,8 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat:400,700");
+@font-face {
+  font-family: Proxima;
+  src: url("fonts/Proxima-Nova-Bold.otf"); }
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -6348,8 +6351,20 @@ label.panel-block {
   border-radius: 12px; }
   .banner-social-links .title,
   .banner-centre-formation .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto; }
+
+.proxima {
+  font-family: Proxima; }
+
+.source-sans-pro {
+  font-family: 'Source Sans Pro'; }
+
+.montserrat {
+  font-family: Montserrat; }
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: unset; }
 
 .sidebar-item {
   background-color: #eff4fa;
@@ -6364,25 +6379,35 @@ label.panel-block {
   margin-bottom: 4px;
   border-radius: 3px; }
 
+.main-hero .title {
+  font-size: 5.75rem; }
+.main-hero .subtitle {
+  font-size: 1.75rem; }
+
 .banner-employeur {
   border-radius: 12px;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
+  background: linear-gradient(rgba(10, 17, 37, 0.45), rgba(10, 17, 37, 0.45)), url("../images/bg.jpg");
   background-size: cover;
   background-position: center; }
   .banner-employeur .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto; }
+
+.button.is-primary:hover,
+.button.is-primary:active,
+.button.is-primary.is-hovered {
+  color: #363636 !important; }
 
 .banner-header-formations,
 .banner-header {
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../images/bg.jpg");
+  background: linear-gradient(rgba(10, 17, 37, 0.45), rgba(10, 17, 37, 0.45)), url("../images/bg.jpg");
   background-size: cover;
   background-position: center; }
   .banner-header-formations .title,
   .banner-header .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto; }
 
 .banner-header-formations {
@@ -6395,6 +6420,10 @@ label.panel-block {
   top: 1rem; }
   .second-menu .navbar-end {
     align-items: center; }
+  .second-menu .navbar-link {
+    padding-right: 0.75rem; }
+  .second-menu .navbar-link::after {
+    display: none; }
   .second-menu .button {
     margin-left: 3rem; }
   .second-menu .navbar-item {
@@ -6410,3 +6439,29 @@ label.panel-block {
   position: sticky;
   top: 1rem;
   align-self: flex-start; }
+
+.commission-scolaire {
+  background-image: url(../images/csd-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 50%;
+  height: 80px; }
+
+.logo {
+  background-image: url(../images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 220px;
+  height: 120px;
+  position: relative;
+  top: 50px; }
+
+.logo-color {
+  background-image: url(../images/logo-color.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 50%;
+  height: 80px; }

@@ -1,14 +1,20 @@
 @charset "utf-8";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat:400,700');
+
+@font-face {
+  font-family: Proxima;
+  src: url('fonts/Proxima-Nova-Bold.otf');
+}
 
 // Set your brand colors
 $yellow: #fbd837;
 $accent: #1170b6;
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: "Nunito",
+sans-serif;
 $primary: $yellow;
 
 @import "bulma/bulma.sass";
@@ -17,10 +23,27 @@ $primary: $yellow;
 .banner-centre-formation {
   background-color: #eff4fa;
   border-radius: 12px;
+
   .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
   }
+}
+
+.proxima {
+  font-family: Proxima;
+}
+
+.source-sans-pro {
+  font-family: 'Source Sans Pro';
+}
+
+.montserrat {
+  font-family: Montserrat;
+}
+
+.title:not(.is-spaced)+.subtitle {
+  margin-top: unset;
 }
 
 .sidebar-item {
@@ -37,36 +60,50 @@ $primary: $yellow;
   border-radius: 3px;
 }
 
+.main-hero {
+  .title {
+    font-size: 5.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.75rem;
+  }
+}
+
 .banner-employeur {
   border-radius: 12px;
   position: relative;
-  background: 
-  linear-gradient(
-    rgba(0, 0, 0, 0.45), 
-    rgba(0, 0, 0, 0.45)
-  ),
-  url('../images/bg.jpg');
+  background:
+    linear-gradient(rgba(10, 17, 37, 0.45),
+    rgba(10, 17, 37, 0.45)),
+    url('../images/bg.jpg');
   background-size: cover;
   background-position: center;
+
   .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
   }
+}
+
+.button.is-primary:hover,
+.button.is-primary:active,
+.button.is-primary.is-hovered {
+  color: #363636 !important;
 }
 
 .banner-header-formations,
 .banner-header {
   position: relative;
-  background: 
-  linear-gradient(
-    rgba(0, 0, 0, 0.45), 
-    rgba(0, 0, 0, 0.45)
-  ),
-  url('../images/bg.jpg');
+  background:
+    linear-gradient(rgba(10, 17, 37, 0.45),
+    rgba(10, 17, 37, 0.45)),
+    url('../images/bg.jpg');
   background-size: cover;
   background-position: center;
+
   .title {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
   }
 }
@@ -80,12 +117,23 @@ $primary: $yellow;
   left: 0;
   right: 0;
   top: 1rem;
+
   .navbar-end {
     align-items: center;
   }
+
+  .navbar-link {
+    padding-right: 0.75rem;
+  }
+
+  .navbar-link::after {
+    display: none;
+  }
+
   .button {
     margin-left: 3rem;
   }
+
   .navbar-item {
     margin-left: 1rem;
   }
@@ -96,11 +144,40 @@ $primary: $yellow;
 }
 
 .has-text-accent {
-  color: $accent!important;
+  color: $accent !important;
 }
 
 .is-sticky {
   position: sticky;
   top: 1rem;
   align-self: flex-start;
+}
+
+.commission-scolaire {
+  background-image: url(../images/csd-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 50%;
+  height: 80px;
+}
+
+.logo {
+  background-image: url(../images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 220px;
+  height: 120px;
+  position: relative;
+  top: 50px;
+}
+
+.logo-color {
+  background-image: url(../images/logo-color.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  width: 50%;
+  height: 80px;
 }
