@@ -97,7 +97,7 @@
       <div class="columns is-variable is-8">
         <div class="column is-one-third">
           <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_1"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
+          <img src="<?php echo get_field("photo_colonne_1"); ?>"   />
           <br /> <br />
           <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_1"); ?></h3>
           <p class="source-sans-pro"><?php echo get_field("description_colonne_1"); ?></p>
@@ -111,7 +111,7 @@
         </div>
         <div class="column is-one-third">
           <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_2"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
+          <img src="<?php echo get_field("photo_colonne_2"); ?>"   />
           <br /> <br />
           <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_2"); ?></h3>
           <p class="source-sans-pro"><?php echo get_field("description_colonne_2"); ?></p>
@@ -125,7 +125,7 @@
         </div>
         <div class="column is-one-third">
           <h2 class="montserrat has-text-weight-bold subtitle is-uppercase has-text-accent"><?php echo get_field("titre_colonne_3"); ?></h2>
-          <img src="images/rendez_vous.jpg"   />
+          <img src="<?php echo get_field("photo_colonne_3"); ?>"   />
           <br /> <br />
           <h3 class="montserrat subtitle has-text-weight-bold"><?php echo get_field("sous-titre_colonne_3"); ?></h3>
           <p class="source-sans-pro"><?php echo get_field("description_colonne_3"); ?></p>

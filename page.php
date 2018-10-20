@@ -9,10 +9,93 @@
 			$sidebar_class = "both-sidebar-included";
 		}
 
-	?>
+  ?>
+  
+  <?php 
+  $menu_name = 'main_menu';
+  if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+      $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+    
+      $menu_items = wp_get_nav_menu_items($menu->term_id);
+      $menu_list = '';
+      $count = 0;
+      $submenu = false;$cpi=get_the_id();
+      foreach( $menu_items as $current ) {
+          if($cpi == $current->object_id ){if ( !$current->menu_item_parent ) {$cpi=$current->ID;}else{$cpi=$current->menu_item_parent;}$cai=$current->ID;break;}
+      }
+      foreach( $menu_items as $menu_item ) {
+          $link = $menu_item->url;
+          $title = $menu_item->title;
+          $menu_item->ID==$cai ? $ac2=' current_menu' : $ac2='';
+          if ( !$menu_item->menu_item_parent ) {
+              $parent_id = $menu_item->ID;$parent_id==$cpi ? $ac=' current_item' : $ac='';
+              if(!empty($menu_items[$count + 1]) && $menu_items[ $count + 1 ]->menu_item_parent == $parent_id ){//Checking has child
+                  $menu_list .= '<div class="navbar-item has-dropdown is-hoverable"><a href="'.$link.'" class="navbar-link has-text-white is-uppercase has-text-weight-bold"><small>'.$title.'</small></a>';
+              }else{
+                  $menu_list .= '<div><a href="'.$link.'" class="has-text-white navbar-item is-uppercase has-text-weight-bold"><small>'.$title.'</small></a>';
+              }
+          }
+          if ( $parent_id == $menu_item->menu_item_parent ) {
+              if ( !$submenu ) {
+                  $submenu = true;
+                  $menu_list .= '<div class="navbar-dropdown is-boxed">';
+              }
+              $menu_list .= '';
+              $menu_list .= '<a href="'.$link.'" class="navbar-item">'.$title.'</a>' ."\n";
+              $menu_list .= '' ."\n";
+              if(empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id && $submenu){
+                  $menu_list .= '</div>';
+                  $submenu = false;
+              }
+          }
+          if (empty($menu_items[$count + 1]) || $menu_items[ $count + 1 ]->menu_item_parent != $parent_id ) { 
+              $menu_list .= '</div>';      
+              $submenu = false;
+          }
+          $count++;
+      }
+  }
+
+  ?>
+  
 	<div class="content-wrapper <?php echo $sidebar_class; ?>">
-			
-		<div class="page-wrapper">
+  <section class="banner-header-contact hero is-medium has-text-centered" style="background: linear-gradient(rgba(1, 16, 43, 0.75), rgba(255, 255, 255, 0)),url(<?php echo get_the_post_thumbnail_url(); ?>">
+    <nav class="navbar second-menu is-transparent">
+      <div class="container">
+        <div class="navbar-brand">
+          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+          </div>
+
+          <div class="navbar-end">
+            <a href="/">
+              <span class="icon has-text-primary">
+                <i class="fas fa-home"></i>
+              </span>
+            </a>
+            <?php echo $menu_list; ?>
+            <a href="#" class="has-text-weight-bold is-uppercase button is-primary is-rounded"><small>&nbsp;Demande d'admission&nbsp;</small></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-uppercase has-text-weight-bold has-text-white">
+          <?php echo get_the_title(); ?>
+        </h1>
+      </div>
+    </div>
+  </section>
+  <br/><br/>
+		<div class="page-wrapper container">
 			<?php
 				// Top Slider Part
 				global $gdl_top_slider_type, $gdl_top_slider_xml;
@@ -57,7 +140,7 @@
 				$gdl_show_content = get_post_meta($post->ID, 'page-option-show-content', true);
 				if ( $gdl_show_title != "No" ){
 					while (have_posts()){ the_post(); 
-						echo '<div class="sixteen columns mt30">';
+						echo '<div class="sixteen mt30">';
 						echo '<h1 class="gdl-page-title gdl-divider gdl-title title-color">';
 						the_title();
 						echo '</h1>';
@@ -76,7 +159,7 @@
 						$content = get_the_content();
 						$content = apply_filters('the_content', $content);
 						if( $gdl_show_content != 'No' && !empty( $content ) ){
-							echo '<div class="sixteen columns mt0">';
+							echo '<div class="sixteen mt0">';
 							echo '<div class="gdl-page-content">';
 							echo $content;
 							wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'gdl_front_end' ) . '</span>', 'after' => '</div>' ) );
@@ -187,7 +270,11 @@
 				
 			?>
 			
-			<br class="clear">
+      <br class="clear">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 		</div>
 	</div> <!-- content-wrapper -->
 	

@@ -102,17 +102,20 @@ src="https://www.facebook.com/tr?id=305309189923953&ev=PageView&noscript=1"
 
       <div id="navbarExampleTransparentExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item is-uppercase" href="https://bulma.io/">
-            <small>Soins visuels</small>
+          <a class="navbar-item is-uppercase" href="/faq">
+            <small>FAQ</small>
           </a>
-          <a class="navbar-item is-uppercase" href="https://bulma.io/">
-          <small>Produits</small>
+          <a class="navbar-item is-uppercase" href="/zone-des-eleves">
+          <small>Zone des élèves</small>
           </a>
-          <a class="navbar-item is-uppercase" href="https://bulma.io/">
-          <small>Blogue</small>
+          <a class="navbar-item is-uppercase" href="/zone-du-personnel">
+          <small>Zone du personnel</small>
           </a>
-          <a class="navbar-item is-uppercase" href="https://bulma.io/">
-          <small>Contact</small>
+          <a class="navbar-item is-uppercase" href="/employeurs">
+          <small>Employeurs</small>
+          </a>
+          <a class="navbar-item is-uppercase" href="/nous-joindre">
+          <small>Nous joindre</small>
           </a>
         </div>
 

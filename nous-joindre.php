@@ -50,7 +50,7 @@
   ?>
 
   
-  <section class="banner-header-formations hero is-medium has-text-centered" style="background: linear-gradient(rgba(1, 16, 43, 0.75), rgba(255, 255, 255, 0)),url(<?php echo get_the_post_thumbnail_url(); ?>">
+  <section class="banner-header-contact hero is-medium has-text-centered" style="background: linear-gradient(rgba(1, 16, 43, 0.75), rgba(255, 255, 255, 0)),url(<?php echo get_the_post_thumbnail_url(); ?>">
     <nav class="navbar second-menu is-transparent">
       <div class="container">
         <div class="navbar-brand">
@@ -66,7 +66,7 @@
           </div>
 
           <div class="navbar-end">
-            <a href="#">
+            <a href="/">
               <span class="icon has-text-primary">
                 <i class="fas fa-home"></i>
               </span>
@@ -87,12 +87,14 @@
   </section>
   <section class="section">
     <div class="container">
+    <br/>
+    <br/>
     <iframe style="border: 0px currentColor;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.868447258327!2d-71.29815384855338!3d46.76748945345337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb8912c73ad77d9%3A0xe2568758dfcc1068!2sCentre+de+formation+professionnelle+Marie-Rollet!5e0!3m2!1sfr!2sca!4v1464621514677" width="100%" height="400" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
       <br/>
+      <br/>
+      <br/>
+      <br/>
       <div class="columns">
-        <div class="column is-one-third">
-          <?php echo $menu_list2; ?>
-        </div>
         <div class="column content">
           <?php echo the_content(); ?>
         </div>
